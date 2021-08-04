@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+     <title>Contacts</title>
+     <meta charset="utf-8">
+     <link rel="icon" href="images/favicon.ico">
+     <link rel="shortcut icon" href="images/favicon.ico" />
+     <link rel="stylesheet" href="css/form.css">
+     <link rel="stylesheet" href="css/style.css">
+     <script src="js/jquery.js"></script>
+     <script src="js/jquery-migrate-1.1.1.js"></script>
+     <script src="js/jquery.equalheights.js"></script>
+     <script src="js/TMForm.js"></script>
+     <script src="js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&amp;sensor=false"> </script>
+          <link rel="stylesheet" href="css/footer-distributed-with-address-and-phones.css">
+	
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+   
+     <script>
+        $(document).ready(function(){
+
+          $().UItoTop({ easingType: 'easeOutQuart' });
+        }) 
+     </script>
+     <!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+         </a>
+
+    <![endif]-->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <link rel="stylesheet" media="screen" href="css/ie.css">
+    <![endif]-->
+    <!--[if lt IE 10]>
+      <script src="js/html5shiv.js"></script>
+      <link rel="stylesheet" media="screen" href="css/ie1.css">
+    <![endif]-->
+    
+     </head>
+     <body  >
+
+
+         
+<!--==============================Content=================================-->
+         <I> <center><h1 class="titre" style="color:#00FFFF"> Pour nous, votre satisfaction est essentielle </h1></center></I>
+          <I> <center> <h2 class="para" style="color:#000000">Vous souhaitez confirmer votre réservation , ou juste demander des informations complémentaires, n'hesitez pas  a nous contacter.</h2></center></I> &nbsp;&nbsp;&nbsp;
+
+<div class="content contact">
+  <div class="container_12">
+      <div class="grid_12">
+        <div id="map"></div>
+      </div>
+      <div class="clear"></div>
+      <div class="grid_4">
+        
+              
+            </div>
+        </div>
+                    
+                    
+                    
+            
+      <div class="grid_8">
+        <h3 class="head3">Contactez Nous</h3>
+           <img src= "co.jpg" height="330" width="500"align="right" />
+              <form id="form" method="post" action="#">
+                              
+                        <div class="success_wrapper">
+                        <div class="success-message">Contact form submitted</div>
+                        </div>
+                         <label class="name">
+                        <aside><input type="text" name="nom" placeholder="Nom:" data-constraints="@Required @JustLetters" />
+                        <span class="empty-message">*This field is required.</span>
+                        <span class="error-message">*This is not a valid name.</span>
+                       </aside> </label>
+                      
+                        <label class="email">
+                     <input type="text" email="email" placeholder="E-mail:" data-constraints="@Required @Email" />
+                        <span class="empty-message">*This field is required.</span>
+                        <span class="error-message">*This is not a valid email.</span>
+                        </label>
+                        
+                        <label class="message">
+                      <textarea  message="message" placeholder="Message:" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
+                        <span class="empty-message">*This field is required.</span>
+                        <span class="error-message">*The message is too short.</span>
+                        </label><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                        <div>
+                        <aside><div class="clear"></div>
+                        <div class="btns">
+                       
+                        <a href="#" data-type="submit" class="btn">envoyer</a></div>
+                        
+                            </aside>
+                            </div>
+                        </form>  <br> 
+         
+           <aside> <div class="map"></div>
+                    
+                  <img src= "icon_location_bleu.png" height="40" width="40"align="left"/> <h2>Address</h2>
+                    <h4>Sidi Bel Abbés, Algérie <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bureau de poste EL WIAM, 22016</h4>
+                    <img src= "phone.png" height="40" width="40"align="left"/> <h2> phone </h2> &nbsp;
+                     <h4> 0791886612</h4>
+                     <h4> 0676720093</h4>
+ <img src= "at-sign-2380456_960_720.png" height="40" width="40"align="left"/> <h2> Email </h2><p><i class="icon-envelope-alt"></i>  <a href="">contact@online location.com</a></p> 
+             </aside>
+             </div>
+          
+          
+  </div>
+<?php
+//var_dump(§)
+@mysql_connect("localhost","root","") or die("erreur de cnx au serveur ");
+@mysql_select_db("location") or die ("erreu de cnx a la base de donneés ");
+$nom=$_POST['nom'];
+$email=$_POST['email'];
+$message=$_POST['message'];
+$req=mysql_query("INSERT INTO location  VALUES($nom','$email','$message')");
+if ($req) echo"votre message a été envoyé"; 
+else echo"erreur";
+?>
+<!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    
+                    
+                    
+
+                    
+                       
+                    <footer class="footer-distributed">
+
+			<div class="footer-left">
+
+				<h3>online<span>location</span></h3>
+
+				<p class="footer-links">
+					<a href="#">accueil</a>
+					/
+					<a href="#">nos vehicules</a>
+					/
+					<a href="#">Présentation</a>
+				    /
+					<a href="#">condition de location</a>
+					/
+					
+					
+					<a href="#">Contact</a>
+				</p>
+
+				<p class="footer-company-name">online location &copy; 2018</p>
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p><span>Bureau de poste EL WIAM, 22016</span> Sidi Bel Abbés, Algérie</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>+1 555 123456</p>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="mailto:support@company.com">support@company.com</a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+
+				<p class="footer-company-about">
+					<span>About us</span>
+					online location  est une agence de location de voitures . Nous proposons une gamme complète de voitures en location partout en algerie
+                . La réservation est rapide via un formulaire de demande de location, nous vous contacterons par la suite pour vous confirmer la disponibilité de votre voiture.
+				</p>
+
+				<div class="footer-icons">
+
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-linkedin"></i></a>
+					<a href="#"><i class="fa fa-github"></i></a>
+
+				</div>
+
+			</div>
+
+		</footer>      
+                        
+        
+                    
+                    <!-- Le javascript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script> 
+<script src="assets/js/jquery.js"></script> 
+<script src="assets/js/google-code-prettify/prettify.js"></script> 
+<script src="assets/js/bootstrap-transition.js"></script> 
+<script src="assets/js/bootstrap-alert.js"></script> 
+<script src="assets/js/bootstrap-modal.js"></script> 
+<script src="assets/js/bootstrap-dropdown.js"></script> 
+<script src="assets/js/bootstrap-scrollspy.js"></script> 
+<script src="assets/js/bootstrap-tab.js"></script> 
+<script src="assets/js/bootstrap-tooltip.js"></script> 
+<script src="assets/js/bootstrap-popover.js"></script> 
+<script src="assets/js/bootstrap-button.js"></script> 
+<script src="assets/js/bootstrap-collapse.js"></script> 
+<script src="assets/js/bootstrap-carousel.js"></script> 
+<script src="assets/js/bootstrap-typeahead.js"></script> 
+<script src="assets/js/bootstrap-affix.js"></script> 
+<script src="assets/js/application.js"></script> 
+<script src="assets/js/contact.js" type="text/javascript"></script> 
+<script src="assets/js/superfish.js" type="text/javascript"></script> 
+<script src="assets/js/custom.js" type="text/javascript"></script>
+
+
+</body>
+
+</html>
