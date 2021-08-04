@@ -12,7 +12,9 @@ Création d’un Site Web pour la location de véhicules, dans le cadre de notre
 - Avoir une base de données adéquate afin de faciliter le suivie des demandes de location.
 - Appliquer des outils de développement afin d’améliorer la qualité de ce site.
 
-<details><summary> Interfaces : (click) </summary>
+## 🖼 Les Interfaces : 
+
+<details><summary> Click </summary>
   
 - Admin interface : 
   
